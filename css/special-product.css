@@ -1,0 +1,30 @@
+.contain-merchandise{
+    display: flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+.content-img{
+    width:200px;
+}
+.content-img img{
+    width:100%;
+    object-fit: cover;
+}
+.special-name{
+    margin-bottom:10px;
+}
+.special-btn span {
+    display: inline-block;
+    border: 1px solid rgba(170, 170, 0, 0.849);
+    border-radius: 5px;
+    padding: 5px;
+    margin-top:10px ;
+}
+.special-btn span:active {
+    display: inline-block;
+    border: 1px solid rgba(170, 170, 0, 0.849);
+    background-color:rgba(170, 170, 0, 0.849);
+    border-radius: 5px;
+    padding: 5px;
+}

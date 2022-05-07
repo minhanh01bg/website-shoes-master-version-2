@@ -1,0 +1,39 @@
+.circle-user{
+    width:40px;
+    border-radius:10px;
+}
+.circle-user img{
+    width:100%;
+    border-radius:10px; 
+    object-fit:cover;
+}
+/* .box-content-user{
+    
+} */
+.content-user{
+    display:none;
+    background-color:rgba(232, 228, 228, 0.867);
+    position:absolute;
+    right:0px;
+    width:0px;
+    flex-direction: column;
+    justify-content: center;
+    border-radius:5px;
+}
+.content-user div{
+    padding:10px;
+    display:flex;
+    align-items: center;
+    cursor:pointer;
+}
+.content-user div i{
+    margin-right:10px;
+}
+.content-user div:hover{
+    background-color: rgb(0, 0, 0);
+    border-radius:5px;
+    color: white;
+}
+.content-user div:hover i{
+    color: white;
+}

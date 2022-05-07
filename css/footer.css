@@ -1,0 +1,112 @@
+            .footer {
+                background-color: var(--white);
+                padding: 2rem 6%;
+                margin-top: 400px;
+            }
+
+            .footer .box-container {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+                gap: 1.5rem;
+            }
+
+            .footer .box-container .box h3 {
+                font-size: 1.5rem;
+                color: var(--black);
+                padding: 1rem 0;
+            }
+
+            .footer .box-container .box h3 i {
+                color: var(--orange);
+            }
+
+            .footer .box-container .box .links {
+                display: block;
+                font-size: 1.1rem;
+                color: var(--light-color);
+                padding: 1rem 0;
+            }
+
+            .footer .box-container .box .links i {
+                color: var(--orange);
+                padding-right: .5rem;
+                transition: .2s linear;
+            }
+
+            .footer .box-container .box .links:hover i {
+                padding-right: 2rem;
+            }
+
+            .footer .box-container .box p {
+                line-height: 1.8;
+                font-size: 1.1rem;
+                color: var(--light-color);
+                padding: 1rem 0;
+            }
+
+            .footer .box-container .box .share a {
+                height: 4rem;
+                width: 4rem;
+                line-height: 4rem;
+                border-radius: .5rem;
+                font-size: 1rem;
+                color: var(--black);
+                margin-right: .2rem;
+                background-color: #eee;
+                text-align: center;
+            }
+
+            .footer .box-container .box .share a:hover {
+                background-color: var(--orange);
+                color: var(--white);
+            }
+
+            .footer .box-container .box .email {
+                width: 100%;
+                margin: .7rem 0;
+                padding: 1rem;
+                border-radius: .5rem;
+                background-color: #eee;
+                font-size: 1.1rem;
+                color: var(--black);
+                text-decoration: none;
+            }
+
+            .footer .box-container .box .payment-img {
+                margin-top: 2rem;
+                height: 3rem;
+            }
+
+            .footer .credit {
+                text-align: center;
+                margin-top: 2rem;
+                padding: 1rem;
+                padding-top: 2.5rem;
+                font-size: 1rem;
+                color: var(--black);
+                border-top: var(--border);
+            }
+
+            .footer .credit span {
+                color: var(--orange);
+                cursor: pointer;
+            }
+
+            .btn {
+                display: inline-block;
+                border: 1px solid rgba(170, 170, 0, 0.849);
+                border-radius: 5px;
+                padding: 5px;
+                width: 100px;
+                text-align: center;
+                margin-top: 10px;
+                cursor: pointer;
+            }
+
+            .btn:active {
+                display: inline-block;
+                border: 1px solid rgba(170, 170, 0, 0.849);
+                background-color: rgb(4, 255, 0);
+                border-radius: 5px;
+                padding: 5px;
+            }

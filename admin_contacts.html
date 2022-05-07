@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Thông báo</title>
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+   <!-- custom admin css file link  -->
+   <link rel="stylesheet" href="css/admin_style.css">
+   <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+
+</head>
+<body>
+   
+   
+   <header class="header">
+
+      <div class="flex">
+            <a href="admin_page.html" class="logo">
+               VMAS
+               <span> Admin</span>
+           </a>
+   
+         <nav class="navbar">
+            <a href="admin_page.html">Trang chủ</a>
+            <a href="admin_products.html">Sản phẩm</a>
+            <a href="admin_orders.html">Đơn hàng</a>
+            <a href="admin_users.html">Tài khoản</a>
+            <a href="admin_contacts.html">Thông báo</a>
+         </nav>
+   
+         <div class="icons">
+            <div id="menu-btn" class="fas fa-bars"></div>
+            <div id="user-btn" class="fas fa-user"></div>
+         </div>
+   
+         <div class="account-box">
+            
+            <div class="admin">
+               <div class="image">
+                     <img src="image/User_Avatar_2.jpg" alt="" />
+               </div>
+               <div class="name">
+                     <h3>Tên</h3>
+                     <p>Họ và tên</p>
+               </div>
+            </div>
+            <div class="control">
+               <div class="control-item">
+                     <a href="#">
+                        <div class="control-item-icon">
+                           <i class="fas fa-cog"></i>
+                           <p>Cài đặt</p>
+                        </div>
+                     </a>
+               </div>
+   
+               <div class="control-item">
+                     <a href="logout.php">
+                        <div class="control-item-icon">
+                           <i class="fas fa-sign-out-alt"></i>
+                           <p>Đăng xuất</p>
+                        </div>
+                     </a>
+               </div>
+            </div>
+            <div class="other-account">Tài khoản khác <a href="login.php">Đăng nhập</a> | <a href="register.php">Đăng ký</a> </div>
+         </div>
+   
+      </div>
+   
+   </header>
+
+<section class="messages">
+
+   <h1 class="title">Thông báo</h1>
+
+   <div class="box-container">
+
+      <div class="box">
+         <p>ID người dùng : 1</span> </p>
+         <p>Tên : Nguyễn Văn A </p>
+         <p>Số điện thoại : 0123456789 </p>
+         <p>Email : A@gmail.com </p>
+         <p>Tin nhắn : Giày jordan còn không ạ? </p>
+         <a href="admin_contacts.html" onclick="return confirm('delete this message?');" class="delete-btn">delete</a>
+      </div>
+   </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="script/admin_script.js"></script>
+
+</body>
+</html>

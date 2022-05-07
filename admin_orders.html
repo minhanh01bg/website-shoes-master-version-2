@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Đơn hàng</title>
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+   <!-- custom admin css file link  -->
+   <link rel="stylesheet" href="css/admin_style.css">
+   <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+
+</head>
+<body>
+   
+  
+   <header class="header">
+
+      <div class="flex">
+            <a href="admin_page.html" class="logo">
+               VMAS
+               <span> Admin</span>
+           </a>
+   
+         <nav class="navbar">
+            <a href="admin_page.html">Trang chủ</a>
+            <a href="admin_products.html">Sản phẩm</a>
+            <a href="admin_orders.html">Đơn hàng</a>
+            <a href="admin_users.html">Tài khoản</a>
+            <a href="admin_contacts.html">Thông báo</a>
+         </nav>
+   
+         <div class="icons">
+            <div id="menu-btn" class="fas fa-bars"></div>
+            <div id="user-btn" class="fas fa-user"></div>
+         </div>
+   
+         <div class="account-box">
+            
+            <div class="admin">
+               <div class="image">
+                     <img src="image/User_Avatar_2.jpg" alt="" />
+               </div>
+               <div class="name">
+                     <h3>Tên</h3>
+                     <p>Họ và tên</p>
+               </div>
+            </div>
+            <div class="control">
+               <div class="control-item">
+                     <a href="#">
+                        <div class="control-item-icon">
+                           <i class="fas fa-cog"></i>
+                           <p>Cài đặt</p>
+                        </div>
+                     </a>
+               </div>
+   
+               <div class="control-item">
+                     <a href="logout.php">
+                        <div class="control-item-icon">
+                           <i class="fas fa-sign-out-alt"></i>
+                           <p>Đăng xuất</p>
+                        </div>
+                     </a>
+               </div>
+            </div>
+            <div class="other-account">Tài khoản khác <a href="login.php">Đăng nhập</a> | <a href="register.php">Đăng ký</a> </div>
+         </div>
+   
+      </div>
+   
+   </header>
+
+<section class="placed-orders show-products">
+
+   <h1 class="title">Đơn hàng</h1>
+
+   <table class="placed-orders-table products-table">
+      <tr>
+         <th>STT</th>
+         <th>Thời gian đặt hàng</th>
+         <th>Tên người dùng</th>
+         <th>Số điện thoại</th>
+         <th>Địa chỉ</th>
+         <th>Tổng số sản phẩm</th>
+         <th>Tổng thanh toán</th>
+         <th>Phương thức thanh toán</th>
+         <th>Trạng thái thanh toán</th>
+         <th>Chi tiết</th>
+      </tr>
+         <tr>
+            <td>1</td>
+            <td>01/03/2021</td>
+            <td>Nguyễn Văn A</td>
+            <td>0123456789</td>
+            <td>Việt Nâm</td>
+            <td>Giày jordan</td>
+            <td><span>₫</span>1000.000</td>
+            <td>Thẻ ngân hàng</td>
+            <td>Đã thanh toán</td>
+            <td><a href="admin_orders.html">Xem chi tiết</a></td>
+         </tr>
+         <tr>
+            <td>2</td>
+            <td>01/03/2021</td>
+            <td>Nguyễn Văn A</td>
+            <td>0123456789</td>
+            <td>Việt Nâm</td>
+            <td>Giày jordan</td>
+            <td><span>₫</span>1000.000</td>
+            <td>Thẻ ngân hàng</td>
+            <td>Chưa thanh toán</td>
+            <td><a href="admin_orders.html">Xem chi tiết</a></td>
+         </tr>
+         <tr>
+            <td>1</td>
+            <td>01/03/2021</td>
+            <td>Nguyễn Văn A</td>
+            <td>0123456789</td>
+            <td>Việt Nâm</td>
+            <td>Giày jordan</td>
+            <td><span>₫</span>1000.000</td>
+            <td>Thẻ ngân hàng</td>
+            <td>Đã hủy</td>
+            <td><a href="admin_orders.html">Xem chi tiết</a></td>
+         </tr>
+
+
+
+      
+   </table>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="script/admin_script.js"></script>
+
+</body>
+</html>
