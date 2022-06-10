@@ -47,86 +47,98 @@ if (!isset($_SESSION['name'])) {
 
   <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/special-product.css">
+  <link rel="stylesheet" href="css/rep-index.css">
   <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/customalert.css">
 </head>
 
 <body>
   <nav id="nav">
-      <div class="container">
-        <div class="header">
-          <div class="logo">
-            <img src="image/logotest.png" alt="" />
-          </div>
-          <ul class="icon-nav">
-            <li class="search-box">
-              <div class="contain-box-input">
-                <input type="text" placeholder="Tìm kiếm..." id="input-search"
-                  name="input-search" />
-                <i class="fa-solid fa-magnifying-glass"></i>
+    <div class="container">
+      <div class="header">
+        <div class="logo">
+          <img src="image/logotest.png" alt="" />
+        </div>
+        <ul class="icon-nav">
+          <li class="search-box">
+            <div class="contain-box-input">
+              <input type="text" placeholder="Tìm kiếm..." id="input-search" name="input-search" />
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+          </li>
+          <li class="quit-and-user">
+            <div class="box-username">
+              <div class="circle-user" onclick="displayInfo()">
+                <img src="/php/api/post/uploads/<?php
+                                                if ($_SESSION['image'] == "") {
+                                                  echo "263488869_443529827145028_2047190494803940337_n.jpg";
+                                                } else {
+                                                  echo $_SESSION['image'];
+                                                }
+                                                ?>" alt="">
               </div>
-            </li>
-            <li class="quit-and-user">
-              <div class="box-username">
-                <div class="circle-user" onclick="displayInfo()">
-                  <img
-                    src="image/user/263488869_443529827145028_2047190494803940337_n.jpg">
-                </div>
-                <div class="box-content-user">
-                  <div class="content-user" id="content-user">
-                    <div onclick="redirectInfor()"><i class="fa-solid
+              <div class="box-content-user">
+                <div class="content-user" id="content-user">
+                  <div onclick="redirectInfor()"><i class="fa-solid
                         fa-circle-user"></i><span>Thông tin cá nhân</span></div>
-                    <div onclick="redirectDashboard()"><i class="fa-solid
-                        fa-table-columns"></i><span>quản lý</span></div>
-                    <div onclick="redirectCart()"><i class="fa-solid
+                  <?php
+                  if (!isset($_SESSION['user_type'])) {
+                    header('Location: index.php');
+                  } else {
+                    if ($_SESSION['user_type'] == 'admin') {
+                      echo ('<div onclick="redirectDashboard()"><i class="fa-solid fa-table-columns"></i><span>quản lý</span></div>');
+                    }
+                  }
+                  ?>
+                  <div onclick="redirectCart()"><i class="fa-solid
                         fa-cart-shopping"></i><span>Giỏ hàng</span></div>
-                    <div onclick="redirectLogin()"><i class="fa-solid
+                  <div onclick="redirectLogin()"><i class="fa-solid
                         fa-right-from-bracket"></i><span>Thoát</span></div>
-                  </div>
                 </div>
               </div>
-            </li>
-            <li id="menubtn">
-              <i class="fa-solid fa-bars"></i>
-            </li>
+            </div>
+          </li>
+          <li id="menubtn">
+            <i class="fa-solid fa-bars"></i>
+          </li>
+        </ul>
+      </div>
+      <div class="sticky">
+        <div class="navigation">
+          <ul>
+            <li class="glow nav-content" id="glow" onclick="redirectHome()">Trang chủ</li>
+            <div class="th">
+              <li class="th-hover abc">Thương hiệu</li>
+              <div class="list-th">
+                <a href="view.php#nike" style="text-decoration:none;">
+                  <li class="abc-one">Nike</li>
+                </a>
+                <a href="view.php#adidas" style="text-decoration:none;">
+                  <li class="abc-two">Adidas</li>
+                </a>
+              </div>
+            </div>
+            <li class="nav-content male" onclick="redirectNam()">Nam</li>
+            <li class="nav-content female" onclick="redirectNu()">Nữ</li>
+            <li class="nav-content list-love" onclick="redirectList()">Danh
+              sách yêu thích</li>
+            <li class="nav-content news" onclick="redirectNew()">Tin tức</li>
+            <li class="nav-content-search" style="display: none;">Tìm kiếm</li>
+            <li class="nav-content-account" style="display: none;">Tài khoản</li>
           </ul>
         </div>
-        <div class="sticky">
-          <div class="navigation">
-            <ul>
-              <li class="glow nav-content" id="glow" onclick="redirectHome()">Trang
-                chủ</li>
-              <div class="th">
-                <li class="th-hover abc">Thương hiệu</li>
-                <div class="list-th">
-                  <a href="view.php#nike" style="text-decoration:none;">
-                    <li class="abc-one" onclick="load_nike()">Nike</li>
-                  </a>
-                  <a href="view.php#adidas" style="text-decoration:none;">
-                    <li class="abc-two">Adidas</li>
-                  </a>
-                </div>
-              </div>
-              <li class="nav-content male" onclick="redirectNam()">Nam</li>
-              <li class="nav-content female" onclick="redirectNu()">Nữ</li>
-              <li class="nav-content list-love" onclick="redirectList()">Danh
-                sách yêu thích</li>
-              <li class="nav-content news">Tin tức</li>
-              <li class="nav-content-search" style="display: none;">Tìm kiếm</li>
-              <li class="nav-content-account" style="display: none;">Tài khoản</li>
-            </ul>
-          </div>
-        </div>
-        <div class="progress-container">
-          <div class="progress-bar" id="myBar"></div>
-        </div>
-        <div class="women">
-          <ul></ul>
-        </div>
       </div>
+      <div class="progress-container">
+        <div class="progress-bar" id="myBar"></div>
+      </div>
+      <div class="women">
+        <ul></ul>
+      </div>
+    </div>
 
-    </nav>
-  
-    <input type="hidden" value="<?php echo $_SESSION["id"]; ?>" id="id-user">
+  </nav>
+
+  <input type="hidden" value="<?php echo $_SESSION["id"]; ?>" id="id-user">
   <div class="hero-section">
     <div class="hero-slide">
       <div class="owl-carousel carousel-nav-center" id="hero-carousel">
@@ -211,14 +223,15 @@ if (!isset($_SESSION['name'])) {
   <!-- top up and message with server ------------------------>
   <div class="top-up">
     <span class="material-icons-outlined" id="icon-top-up">navigation</span>
-    <div class="message-with-system">
+    <!-- <div class="message-with-system">
       <a href="#"><span class="material-icons-outlined icon-chat">chat</span></a>
-    </div>
+    </div> -->
   </div>
   <!-- end top up -->
   <!-- product ------------------------>
+  
   <div class="all-content-product" id="all-content-product">
-
+  
     <div class="special-product" id="nike-product">
       <div class="special-product-header-title">
         <span class="header-title" id="nike">Nike</span>
@@ -457,11 +470,14 @@ if (!isset($_SESSION['name'])) {
             </div>
           </div>
         </div>
-        
+
       </div>
       <!-- end product ------------------------>
     </div>
   </div>
+  <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+  <div class="elfsight-app-6b7c4476-cba7-4d7f-b0ef-dc55634740e3"></div>
+
   <?php @include "footer.php" ?>
   <!-- jquery -->
   <script src="node_modules/jquery/dist/jquery.js"></script>

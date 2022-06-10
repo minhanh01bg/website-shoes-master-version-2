@@ -43,7 +43,7 @@
 </div>
 
 
-<div class="credit"> created by <span> ? </span> | all rights reseved </div>
+<div class="credit"> created by <span> YuMinAN </span> | all rights reseved </div>
 
 </section>
 <!-- end footer------------------------------------------------ -->

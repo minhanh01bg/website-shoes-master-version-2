@@ -42,33 +42,6 @@ window.onscroll = () => {
     var current = document.documentElement.scrollTop;
     console.log(scroll);
     // set background navigation bar
-    if (current >= 695) {
-        $(".navigation").css({
-            "color": "black",
-            "background-color":"white",
-            "transition": ".3s ease-in-out",
-            "z-index": "1000"
-        });
-        $(".navigation ul li").css({
-            "color": "red"
-        });
-        // $(".navigation ul li").hover(function(){
-        //     $(".navigation ul li").css({
-        //         "color":"white",
-        //         "background-color":"black"
-        //     });
-        // });
-    }
-    if (current < 695) {
-        $(".navigation").css({
-            "color": "white",
-            "background":"none"
-        });
-        $(".navigation ul li").css({
-            "color": "white"
-        });
-    }
-    console.log(current);
     if (current < scroll) {
         scroll = current;
         $("#nav").css({

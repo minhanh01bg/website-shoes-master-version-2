@@ -146,6 +146,9 @@ $("#btn-save").click(() => {
   form_data.append('price', $("#basic-icon-default-price").val());
   form_data.append('object', $("#object").val());
   form_data.append('category', $("#category").val());
+  form_data.append('brand',$("#content-brand").val());
+  form_data.append('color',$("#content-color").val());
+  
   $.ajax({
     url: "/php/api/post/Add_product.php",
     type: "post",
@@ -179,7 +182,9 @@ $("#btn-save-edit").click(function () {
     details: $("#basic-icon-default-detail-edit").val(),
     price: $("#basic-icon-default-price-edit").val(),
     object: $("#object-edit").val(),
-    category: $("#category-edit").val()
+    category: $("#category-edit").val(),
+    brand: $("#brand-edit").val(),
+    color: $("#color-edit").val()
   }, function (data) {
     console.log(data);
     var form = new FormData();

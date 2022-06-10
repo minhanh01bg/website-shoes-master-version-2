@@ -16,8 +16,11 @@ $post->details = $_POST['details'];
 $post->price = $_POST['price'];
 $post->ob = $_POST['object'];
 $post->category = $_POST['category'];
-$query = "INSERT INTO `products` (ID, `NAME`, details, price, `object`, category) 
-VALUES ($post->id, '$post->name', '$post->details', $post->price, '$post->ob','$post->category')";
+$post->brand = $_POST['brand'];
+$post->color = $_POST['color'];
+
+$query = "INSERT INTO `products` (ID, `NAME`, details, price, `object`, category, brand,`color`) 
+VALUES ($post->id, '$post->name', '$post->details', $post->price, '$post->ob','$post->category','$post->brand','$post->color');";
 
 $stmt = $db->prepare($query);
 $stmt->execute();

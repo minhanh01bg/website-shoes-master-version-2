@@ -15,6 +15,9 @@ $post->details = $_GET["details"];
 $post->price = $_GET["price"];
 $post->ob = $_GET["object"];
 $post->category = $_GET["category"];
+$post->brand = $_GET["brand"];
+$post->color = $_GET["color"];
+
 $result = $post->update();
 // Get row count
     echo json_encode(

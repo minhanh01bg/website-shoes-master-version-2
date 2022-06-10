@@ -22,7 +22,9 @@
         'price' => $post->price,
         'image' => $post->image,
         'object' => $post->ob,        
-        'category' => $post->category
+        'category' => $post->category,
+        'brand' => $post->brand,
+        'color' => $post->color
     );
     // Make JSON
     print_r(json_encode($post_arr));

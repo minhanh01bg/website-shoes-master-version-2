@@ -21,6 +21,7 @@
 }
 .shoe-type span{
     margin-top:10px;
+    cursor:pointer;
 }
 .line{
     width:100%;
@@ -65,7 +66,7 @@
     top: 190px;
     width:88%;
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     flex-direction: column;
     align-items: center;
     text-align: center;

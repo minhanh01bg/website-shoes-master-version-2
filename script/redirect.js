@@ -28,35 +28,15 @@ function redirectList(){
 function  redirectPayment(){
     location.href = "payment.php";
 }
-function displayInfo() {
-    let display = document.getElementById("content-user").style.display;
-    if (display == "none") {
-        $("#content-user").css({
-            "display": "flex",
-            "z-index": "1100", "width": "250px",
-            // "transform": "translateX(0px)",
-            // "transition": "all ease 0.2s"
-        });
-    }
-    else {
-        $("#content-user").css({ "display": "none", "z-index": "0", "width": "0px" });
-    }
-}
-var scroll = 0;
-window.onscroll = () => {
-    var current = document.documentElement.scrollTop;
-    if (current < scroll) {
-        scroll = current;
-        $("#nav").css({
-            "top": "0",
-            "transition": ".3s ease-in-out",
-        });
 
-    } else if (current > scroll) {
-        $("#nav").css({
-            "top": "-90px"
-        });
-        $("#content-user").css({ "display": "none", "z-index": "0", "width": "0px" });
-        scroll = current;
-    }
+function redirectNew(){
+    location.href = "new.php";
 }
+$("#menubtn").click(function () {
+    if($(".navigation").css("display")=="none"){
+        $(".navigation").show();
+    }
+    else{
+        $(".navigation").hide();
+    }
+});

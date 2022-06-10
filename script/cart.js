@@ -1,6 +1,6 @@
 function cartDisplay() {
     $.getJSON("/php/api/post/R_single_c.php", { id: $("#id-single").val() }, function (data) {
-        // console.log(data);
+        console.log(data);
         $("#modal-payment").html("");
         $("#modal-payment").append(`<div class="title-method-payment">Thanh toán</div>`);
         let all_price = 0;
@@ -10,9 +10,9 @@ function cartDisplay() {
             let img = data.data[i].image;
 
             all_price += Number(data.data[i].price);
-            total_product += data.data[i].name + "(" + data.data[i].quantity +"," +data.data[i].size+"),";
-            let html=
-            `
+            total_product += data.data[i].name + "(" + data.data[i].quantity + "," + data.data[i].size + "),";
+            let html =
+                `
             <div class="product-item">
                 <div style="display:none;">${data.data[i].id}</div>
                 <div class="content-img-item">
@@ -63,6 +63,9 @@ function cartDisplay() {
             $(idSize).val(data.data[i].size);
             $(idOb).text(data.data[i].object);
         }
+        $("#sum-price").text(all_price);
+        all_price +=30000;
+        $("#sum-all-price").text(all_price);
         let btnE = document.querySelectorAll(".edit");
         for (let i = 0; i < btnE.length; i++) {
             btnE[i].addEventListener("click", function (event) {
@@ -106,7 +109,29 @@ function cartDisplay() {
                 });
             });
         }
-        
+        let btnWishlist = document.querySelectorAll(".add-list");
+        for (let i = 0; i < btnWishlist.length; i++) {
+            btnWishlist[i].addEventListener("click", function (event) {
+                let ev = event.target.parentElement.parentElement.parentElement.lastElementChild;
+                console.log(ev);
+                console.log(data.data[Number(ev.textContent)].pid);
+                $.getJSON("/php/api/post/R_single_product.php", { id: data.data[Number(ev.textContent)].pid }, function (d) {
+                    console.log(d);
+                    let image = d.image;
+
+                    $.getJSON("/php/api/post/Add_wishlist.php", {
+                        user_id: data.data[0].user_id,
+                        pid: data.data[Number(ev.textContent)].pid,
+                        price: d.price,
+                        name:d.name, 
+                        image:image
+                    }, function (dt) {
+                        console.log(dt);
+                        
+                    });
+                })
+            });
+        }
         // button delete all cart
         $("#delete-all-cart").click(function (e) {
             $.getJSON("/php/api/post/delete_all_cart.php", {
@@ -121,3 +146,4 @@ function cartDisplay() {
 }
 
 window.onload = cartDisplay;
+

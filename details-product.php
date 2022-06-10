@@ -1,13 +1,18 @@
+<?php
+session_start();
+if (!isset($_SESSION['name'])) {
+  header('Location: index.php');
+}
+?>
 <!DOCTYPE html>
-<html lang="en">
 
+<html lang="en">
     <head>
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>VMAS</title>
         <link rel="stylesheet" href="css/style.css" type="text/css" />
-        <!-- <link rel="stylesheet" href="css/glow.css" /> -->
         <link rel="stylesheet" href="css/product.css" />
         <link rel="stylesheet" href="css/slider-top-in-week.css">
         <link rel="stylesheet" href="css/user.css">
@@ -61,96 +66,14 @@
         <link
             href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600&display=swap"
             rel="stylesheet">
-        <link rel="stylesheet" href="fonts/icomoon/style.css">
         <link rel="stylesheet" href="css/yourlikes.css">
         <link rel="stylesheet" href="css/footer.css">
+        <link rel="stylesheet" href="css/rep-index.css">
     </head>
 
     <body>
-        <nav id="nav">
-            <div class="container">
-                <div class="header">
-                    <div class="logo">
-                        <img src="image/logotest.png" alt="" />
-                    </div>
-                    <ul class="icon-nav">
-                        <li class="search-box">
-                            <div class="contain-box-input">
-                                <input type="text" placeholder="Tìm kiếm..."
-                                    id="input-search"
-                                    name="input-search" />
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                            </div>
-                        </li>
-                        <li class="quit-and-user">
-                            <div class="box-username">
-
-                                <div class="circle-user"
-                                    onclick="displayInfo()">
-                                    <img
-                                        src="image/user/263488869_443529827145028_2047190494803940337_n.jpg">
-                                </div>
-                                <div class="box-content-user">
-                                    <div class="content-user" id="content-user">
-                                        <div onclick="redirectInfor()"><i
-                                                class="fa-solid
-                                                fa-circle-user"></i><span>Thông
-                                                tin cá nhân</span></div>
-                                        <div onclick="redirectDashboard()"><i
-                                                class="fa-solid
-                                                fa-table-columns"></i><span>quản
-                                                lý</span></div>
-                                        <div onclick="redirectCart()"><i
-                                                class="fa-solid
-                                                fa-cart-shopping"></i><span>Giỏ
-                                                hàng</span></div>
-                                        <div onclick="redirectLogin()"><i
-                                                class="fa-solid
-                                                fa-right-from-bracket"></i><span>Thoát</span></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="sticky">
-                    <div class="navigation">
-                        <ul>
-                            <li class="glow nav-content" id="glow"
-                                onclick="redirectHome()">Trang
-                                chủ</li>
-                            <div class="th">
-                                <li class="th-hover abc">Thương hiệu</li>
-                                <div class="list-th">
-                                    <a href="index.html#nike"
-                                        style="text-decoration:none;">
-                                        <li class="abc-one"
-                                            onclick="load_nike()">Nike</li>
-                                    </a>
-                                    <a href="index.html#adidas"
-                                        style="text-decoration:none;">
-                                        <li class="abc-two">Adidas</li>
-                                    </a>
-                                </div>
-                            </div>
-                            <li class="nav-content male"
-                                onclick="redirectNam()">Nam</li>
-                            <li class="nav-content female"
-                                onclick="redirectNu()">Nữ</li>
-                            <li class="nav-content list-love">Danh sách yêu
-                                thích</li>
-                            <li class="nav-content news">Tin tức</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="progress-container">
-                    <div class="progress-bar" id="myBar"></div>
-                </div>
-                <div class="women">
-                    <ul></ul>
-                </div>
-            </div>
-        </nav>
+        <?php @include "header.php"; ?>
+        <input type="hidden" id="id-product" value="<?php echo $_GET['id_product']; ?>">
         <div class="container-details-product">
             <div class="content-image">
                 <div class="box-double-image">
@@ -159,13 +82,13 @@
                             src="image/details/a96a1b62-d6b4-4c91-b1db-ae68863243af.webp"
                             alt="">
                     </div>
-                    <div class="item-image">
+                    <!-- <div class="item-image">
                         <img
                             src="image/details/2.webp"
                             alt="">
-                    </div>
+                    </div> -->
                 </div>
-                <div class="box-double-image">
+                <!-- <div class="box-double-image">
                     <div class="item-image">
                         <img
                             src="image/details/3.webp"
@@ -200,7 +123,7 @@
                             src="image/details/8.webp"
                             alt="">
                     </div>
-                </div>
+                </div> -->
             </div>
             <div class="content-informations">
                 <div class="info-name">
@@ -227,7 +150,7 @@
                         <option value="6">44</option>
                     </select>
                 </div>
-                <div class="btn">
+                <div class="btn-dt">
                     <span class="add-to-cart">Thêm vào giỏ</span>
                     <span class="add-to-cart">Thêm vào danh sách yêu thích</span>
                 </div>
@@ -259,5 +182,6 @@
         <!-- <script src="script/getDataProduct.js"></script> -->
         <!-- <script src="script/script.js"></script> -->
         <script src="script/redirect.js"></script>
+        <script src="script/detail-product.js"></script>
     </body>
 </html>

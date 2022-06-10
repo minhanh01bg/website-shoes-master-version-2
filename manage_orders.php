@@ -24,7 +24,7 @@ if (!isset($_SESSION['user_type'])) {
       minimum-scale=1.0, maximum-scale=1.0"
       />
 
-    <title>Dashboard - Analytics | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
+    <title>Quản lí đơn hàng</title>
     <meta name="description" content="" />
 
     <!-- Favicon -->
@@ -342,12 +342,12 @@ if (!isset($_SESSION['user_type'])) {
           <div class="content-wrapper">
             <!-- Content -->
             <div class="container-xxl flex-grow-1 container-p-y">
-              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Tables
-                  /</span>Order table</h4>
+              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Bảng
+                  /</span>Các đơn hàng</h4>
 
               <!-- Basic Bootstrap Table -->
               <div class="card">
-                <h5 class="card-header">Order table</h5>
+                <h5 class="card-header">Các đơn hàng</h5>
                 <div class="table-responsive text-nowrap">
                   <table class="table">
                     <thead>

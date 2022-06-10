@@ -7,6 +7,7 @@ $("#edit-info").click(()=>{
   form_data.append('phone', $("#content-phone").val());
   form_data.append('address', $("#content-address").val());
   form_data.append('birth', $("#content-birth").val());
+  
   $.ajax({
     url: "/php/api/post/UpdateU.php",
     type: "post",
@@ -19,6 +20,7 @@ $("#edit-info").click(()=>{
       var form = new FormData();
       form.append("files[]", document.getElementById("uploadfile").files[0]);
       form.append('id', id);
+      
       $.ajax({
         url: "/php/api/post/update_imgU.php",
         type: "post",
@@ -27,9 +29,11 @@ $("#edit-info").click(()=>{
         contentType: false,
         processData: false,
         success: function (response) {
-          console.log(response);
+          
         }
       });
+      
     }
   });
 });
+

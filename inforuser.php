@@ -13,11 +13,10 @@ if (!isset($_SESSION['name'])) {
     <meta name="viewport" content="width=device-width,
                 initial-scale=1.0" />
     <title>VMAS</title>
-    <link rel="stylesheet" href="css/styleforcart.css" type="text/css" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
     <!-- <link rel="stylesheet" href="css/glow.css" /> -->
     <link rel="stylesheet" href="css/user.css">
-    <link rel="stylesheet" href="css/infouser.css">
-
+    <link rel="stylesheet" href="css/infouser.css"> 
     <!-- icons ---------------------------------->
     <link rel="stylesheet" href="fontawesome-free-6.0.0-web\fontawesome-free-6.0.0-web\css\all.min.css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
@@ -41,10 +40,10 @@ if (!isset($_SESSION['name'])) {
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500&display=swap" rel="stylesheet">
 
     <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="fonts/icomoon/style.css">
-    <link rel="stylesheet" href="css/styleforInfoFooter.css">
+    <link rel="stylesheet" href="css/order.css">
     <link rel="stylesheet" href="css/footer.css">
-
+    <link rel="stylesheet" href="css/rep-index.css">
+    
 </head>
 
 <body>
@@ -53,10 +52,10 @@ if (!isset($_SESSION['name'])) {
         <span class="material-icons-outlined" id="icon-top-up">
             navigation
         </span>
-        <div class="message-with-system">
+        <!-- <div class="message-with-system">
             <span class="material-icons-outlined icon-chat">
             </span>
-        </div>
+        </div> -->
     </div>
     <!-- end top up -->
     <div class="box-information">
@@ -99,19 +98,22 @@ if (!isset($_SESSION['name'])) {
                 <div class="containner-img">
                     <input type="file" name="uploadfile" id="uploadfile" />
                 </div>
-                <div class="btn">
-                    <button class="edit" id="edit-info">Lưu</button>
+                <div class="">
+                    <button name="edit" class="edit" id="edit-info" method="post">Lưu</button>
                 </div>
+                
             </div>
         </div>
     </div>
     <?php @include "footer.php" ?>
+    <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+    <div class="elfsight-app-6b7c4476-cba7-4d7f-b0ef-dc55634740e3"></div>
     <!-- jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- script -->
     <script src="script/uploadInfo.js"></script>
-    <script src="script/script.js"></script>
-<script src="script/redirect.js"></script>
+    <script src="script/script-two.js"></script>
+    <script src="script/redirect.js"></script>
 </body>
 
 </html>

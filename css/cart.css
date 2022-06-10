@@ -12,11 +12,12 @@
 .container-product-item {
     width: 60%;
     display: flex;
-    display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
     position: relative;
+    height:600px;
+    overflow: hidden scroll;
 }
 
 .title-cart {
@@ -141,6 +142,7 @@
 
 .form-info-total-and-btn {
     font-size: 25px;
+    margin-left:30px;
 }
 
 /* information total cart */

@@ -51,7 +51,7 @@
     margin-left:20px;
 }
 
-.btn span{
+.btn-dt span{
     display: inline-block;
     border: 1px solid rgba(170, 170, 0, 0.849);
     border-radius: 5px;
@@ -59,8 +59,9 @@
     width:350px;
     text-align: center;
     margin-top:10px ;
+    cursor: pointer;
 }
-.btn span:active{
+.btn-dt span:active{
     display: inline-block;
     border: 1px solid rgba(170, 170, 0, 0.849);
     background-color:rgba(170, 170, 0, 0.849);

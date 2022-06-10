@@ -25,7 +25,7 @@ if (!isset($_SESSION['user_type'])) {
       minimum-scale=1.0, maximum-scale=1.0"
       />
 
-    <title>Dashboard - Analytics | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
+    <title>Thống kê</title>
     <meta name="description" content="" />
 
     <!-- Favicon -->
@@ -186,7 +186,7 @@ if (!isset($_SESSION['user_type'])) {
             <li class="menu-item active">
               <a href="dashboard.php" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
-                <div data-i18n="Analytics">Dashboard</div>
+                <div data-i18n="Analytics">Thống kê</div>
               </a>
             </li>
 

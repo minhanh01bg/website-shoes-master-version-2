@@ -3,12 +3,12 @@
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json");
 include($_SERVER["DOCUMENT_ROOT"] . "/php/config/Database.php");
-include($_SERVER["DOCUMENT_ROOT"] . "/php/models/post_product.php");
+include($_SERVER["DOCUMENT_ROOT"] . "/php/models/post_wishlist.php");
 // instantiate DB & connect
 $database = new Database();
 $db = $database->connect();
 // instantiate blog post object 
-$post  = new post_product($db);
+$post  = new post_wishlist($db);
 $result = $post->read();
 // Get row count
 $num = $result->rowCount();
@@ -20,14 +20,11 @@ if ($num > 0) {
         extract($row);
         $post_item = array(
             'id' => $id,
+            'user_id' => $user_id,
+            'pid' => $pid,
             'name' => $name,
-            'details' => $details,
-            'price' => $price,
-            'image' => $image,
-            'object' => $object,
-            'category' => $category,
-            'brand'=> $brand,
-            'color' => $color
+            'price'=> $price,
+            'image'=>$image
         );
         // push to 'data'
         array_push($posts_arr['data'], $post_item);

@@ -17,7 +17,7 @@ if (!isset($_SESSION['user_type'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no,
       minimum-scale=1.0, maximum-scale=1.0" />
 
-  <title>Dashboard - Analytics | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
+  <title>Quản lí sản phẩm</title>
   <meta name="description" content="" />
 
   <!-- Favicon -->
@@ -338,11 +338,29 @@ if (!isset($_SESSION['user_type'])) {
                         </select>
                       </div>
                       <div class="mb-3">
-                        <label for="exampleFormControlSelect1" class="form-label">Thể loại</label>
+                        <label for="exampleFormControlSelect1" class="form-label">Hãng</label>
                         <select class="form-select" id="category" aria-label="Default select example">
-                          <option value ="special" selected>special</option>
                           <option value="nike">nike</option>
                           <option value="adidas">adidas</option>
+                        </select>
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleFormControlSelect1" class="form-label">Thể loại</label>
+                        <select class="form-select" id="content-brand" aria-label="Default select example">
+                          <option value ="special">Giày đặc biệt</option>
+                          <option value ="Giày thể thao">Giày thể thao</option>
+                          <option value="Giày thường" selected>Giày thường</option>
+                          <option value="Giày đá bóng">Giày đá bóng</option>
+                        </select>
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleFormControlSelect1" class="form-label">Màu</label>
+                        <select class="form-select" id="content-color" aria-label="Default select example">
+                          <option value ="Blue">Blue</option>
+                          <option value ="Green">Green</option>
+                          <option value="Red" selected>Red</option>
+                          <option value="White">White</option>
+                          <option value="yellow">Yellow</option>
                         </select>
                       </div>
                       <div class="mb-3">
@@ -406,11 +424,29 @@ if (!isset($_SESSION['user_type'])) {
                         </select>
                       </div>
                       <div class="mb-3">
-                        <label for="exampleFormControlSelect1" class="form-label">Thể loại</label>
+                        <label for="exampleFormControlSelect1" class="form-label">Hãng</label>
                         <select class="form-select" id="category-edit" aria-label="Default select example">
-                          <option value ="special" selected>special</option>
                           <option value="nike">nike</option>
                           <option value="adidas">adidas</option>
+                        </select>
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleFormControlSelect1" class="form-label">Thể loại</label>
+                        <select class="form-select" id="brand-edit" aria-label="Default select example">
+                          <option value ="special">Giày đặc biệt</option>
+                          <option value ="Giày thể thao">Giày thể thao</option>
+                          <option value="Giày thường" selected>Giày thường</option>
+                          <option value="Giày đá bóng">Giày đá bóng</option>
+                        </select>
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleFormControlSelect1" class="form-label">Màu</label>
+                        <select class="form-select" id="color-edit" aria-label="Default select example">
+                          <option value ="Blue">Blue</option>
+                          <option value ="Green">Green</option>
+                          <option value="Red" selected>Red</option>
+                          <option value="White">White</option>
+                          <option value="yellow">Yellow</option>
                         </select>
                       </div>
                       <div class="mb-3">
@@ -430,12 +466,12 @@ if (!isset($_SESSION['user_type'])) {
             </div>
           </div>
           <div class="container-xxl flex-grow-1 container-p-y">
-            <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Tables
-                /</span>Product table</h4>
+            <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Bảng
+                /</span>Bảng các sản phẩm</h4>
 
             <!-- Basic Bootstrap Table -->
             <div class="card">
-              <h5 class="card-header">Product table</h5>
+              <h5 class="card-header">Bảng các sản phẩm</h5>
               <div class="table-responsive text-nowrap">
                 <button type="button" class="btn btn-outline-success" id="btn-add-product" style="margin-left:50px;float:right !important;margin-right:50px;;margin-bottom:10px;">Thêm sản phẩm</button>
                 <table class="table">

@@ -11,13 +11,15 @@ class post_product
     public $image;
     public $ob;
     public $category;
+    public $brand;
+    public $color;
     public function __construct($db)
     {
         $this->conn = $db;
     }
     public function read()
     {
-        $query = "SELECT id,`name`,`details`,price,`image`,`object`,`category` FROM " . $this->table;
+        $query = "SELECT id,`name`,`details`,price,`image`,`object`,`category`,`brand`,`color` FROM " . $this->table;
         $stmt = $this->conn->prepare($query);
         if ($stmt->execute()) {
             return $stmt;
@@ -25,7 +27,7 @@ class post_product
     }
     public function read_single()
     {
-        $query = 'SELECT id, `name`,details ,price ,`image`,`object`, category FROM ' . $this->table . ' WHERE id = ?';
+        $query = 'SELECT id, `name`,details ,price ,`image`,`object`, category,brand,`color` FROM ' . $this->table . ' WHERE id = ?';
         // prepare statement
         $stmt = $this->conn->prepare($query);
         // bind id
@@ -43,12 +45,15 @@ class post_product
         $this->image = $row['image'];
         $this->ob = $row['object'];
         $this->category = $row['category'];
+        $this->brand  = $row['brand'];
+        $this->color  = $row['color'];
+        
     }
     // update post
     public function update()
     {
         $query = "UPDATE products
-            SET `name`=:names,details=:details,price=:price,`object` =:objects,category = :category
+            SET `name`=:names,details=:details,price=:price,`object` =:objects,category = :category,brand=:brand,`color`=:color
             WHERE ID =:id";
 
         // Prepare statement
@@ -61,6 +66,9 @@ class post_product
         $this->price = htmlspecialchars(strip_tags($this->price));
         $this->ob = htmlspecialchars(strip_tags($this->ob));
         $this->category = htmlspecialchars(strip_tags($this->category));
+        $this->brand = htmlspecialchars(strip_tags($this->brand));
+        $this->color = htmlspecialchars(strip_tags($this->color));
+        
         // Bind data
         $stmt->bindParam(':id', $this->id);
         $stmt->bindParam(':names', $this->name);
@@ -68,11 +76,12 @@ class post_product
         $stmt->bindParam(':price', $this->price);
         $stmt->bindParam(':objects', $this->ob);
         $stmt->bindParam(':category', $this->category);
+        $stmt->bindParam(':brand', $this->brand);
+        $stmt->bindParam(':color', $this->color);
         
         if ($stmt->execute()) {
             return true;
         }
-
         // Print error if something goes wrong
         printf("Error: %s.\n", $stmt->error);
 
